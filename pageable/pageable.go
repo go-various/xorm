@@ -9,8 +9,8 @@ type Pageable interface {
 }
 
 type pageable struct {
-	page  int
-	size  int
+	page int
+	size int
 }
 
 func (p *pageable) Skip() int {

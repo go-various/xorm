@@ -30,10 +30,10 @@ func (p *pageable) Page() int {
 }
 
 func NewPageable(page, size int) Pageable {
-	if size == 0 {
+	if size < 1 {
 		size = 50
 	}
-	if page == 0 {
+	if page < 1 {
 		page = 1
 	}
 	return &pageable{page: page, size: size}

@@ -14,7 +14,7 @@ type pageable struct {
 }
 
 func (p *pageable) Skip() int {
-	return p.page * p.size
+	return p.page*p.size - p.Size()
 }
 
 func (p *pageable) Limit() int {
@@ -24,14 +24,21 @@ func (p *pageable) Limit() int {
 func (p *pageable) Size() int {
 	return p.size
 }
+
 func (p *pageable) Page() int {
 	return p.page
 }
 
 func NewPageable(page, size int) Pageable {
+	if size == 0 {
+		size = 50
+	}
+	if page == 0 {
+		page = 1
+	}
 	return &pageable{page: page, size: size}
 }
 
 func DefaultPageable() Pageable {
-	return &pageable{page: 0, size: 50}
+	return &pageable{page: 1, size: 50}
 }

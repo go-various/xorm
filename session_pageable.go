@@ -12,7 +12,7 @@ func (session *Session) FindPagination(rowsSlicePtr interface{}, page pageable.P
 		return nil, ErrPageableCannotBeNil
 	}
 
-	total, err := session.Limit(page.Limit(), page.Skip()).FindAndCount(rowsSlicePtr, condiBean)
+	total, err := session.Limit(page.Limit(), page.Skip()).FindAndCount(rowsSlicePtr, condiBean...)
 	if err != nil {
 		return nil, err
 	}

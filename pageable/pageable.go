@@ -1,11 +1,11 @@
 package pageable
 
-//Pageable 分页
+// Pageable 分页
 type Pageable interface {
-	Skip() int
-	Limit() int
 	Page() int
 	Size() int
+	Skip() int
+	Limit() int
 }
 
 type pageable struct {

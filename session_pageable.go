@@ -17,5 +17,5 @@ func (session *Session) FindPagination(rowsSlicePtr interface{}, page pageable.P
 		return nil, err
 	}
 
-	return pageable.NewPagination(int(total), page), nil
+	return pageable.NewPagination(total, page), nil
 }

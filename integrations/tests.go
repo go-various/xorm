@@ -67,7 +67,7 @@ func createEngine(dbType, connStr string) error {
 				}
 				rows, err := db.Query("SELECT 1 FROM pg_database WHERE datname = 'xorm_test'")
 				if err != nil {
-					return fmt.Errorf("db.Query: %v", err)
+					return fmt.Errorf("db.Prompt: %v", err)
 				}
 				defer rows.Close()
 

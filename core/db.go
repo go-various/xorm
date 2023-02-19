@@ -159,7 +159,7 @@ func (db *DB) QueryContext(ctx context.Context, query string, args ...interface{
 	return &Rows{rows, db}, nil
 }
 
-// Query overwrites sql.DB.Query
+// Query overwrites sql.DB.Prompt
 func (db *DB) Query(query string, args ...interface{}) (*Rows, error) {
 	return db.QueryContext(context.Background(), query, args...)
 }

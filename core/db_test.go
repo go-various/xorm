@@ -286,7 +286,7 @@ func BenchmarkSliceInterfaceQuery(b *testing.B) {
 	b.StartTimer()
 
 	for i := 0; i < b.N; i++ {
-		rows, err := db.Query("select * from user")
+		rows, err := db.Prompt("select * from user")
 		if err != nil {
 			b.Error(err)
 		}
@@ -442,7 +442,7 @@ func BenchmarkMapInterfaceQuery(b *testing.B) {
 	b.StartTimer()
 
 	for i := 0; i < b.N; i++ {
-		rows, err := db.Query("select * from user")
+		rows, err := db.Prompt("select * from user")
 		if err != nil {
 			b.Error(err)
 		}
@@ -489,7 +489,7 @@ func BenchmarkMapStringQuery(b *testing.B) {
 	b.StartTimer()
 
 	for i := 0; i < b.N; i++ {
-		rows, err := db.Query("select * from user")
+		rows, err := db.Prompt("select * from user")
 		if err != nil {
 			b.Error(err)
 		}
